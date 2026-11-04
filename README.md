@@ -9,9 +9,33 @@ and data exports.
 It uses Python's standard library only. It does not use external data or include
 personal information.
 
-## Run
+## Run the dashboard
 
-From the independent project folder in PowerShell:
+Python 3.10 or later is recommended. No third-party packages are required.
+From the project folder in PowerShell:
+
+```powershell
+python app.py
+```
+
+Open [http://127.0.0.1:8080](http://127.0.0.1:8080). The app creates the
+starter dataset on first run if it is missing, then serves a local dashboard
+with primary results, confidence intervals, sample sizes, and guardrail
+statuses. It uses synthetic data and binds to `127.0.0.1` by default. Stop it
+with Ctrl+C.
+
+Use the larger generated dataset with:
+
+```powershell
+python app.py --scale full
+```
+
+Choose another port with `python app.py --port 8081`. In VS Code, press F5 and
+choose **Run experiment dashboard** to start the server and open the page.
+
+## Generate data and run tests
+
+To generate or regenerate the exports directly:
 
 ```powershell
 python generate_experiments.py --scale starter --verify-reproducibility
@@ -73,3 +97,13 @@ this project folder:
 ```powershell
 python -m unittest discover -s tests -v
 ```
+
+Verify the running app endpoints with `http://127.0.0.1:8080/health` and
+`http://127.0.0.1:8080/api/dashboard`. The test suite also checks data loading,
+first-run generation, HTTP routes, and the existing generator's integrity and
+reproducibility behavior.
+
+See [AI_DISCLOSURE.md](AI_DISCLOSURE.md) for the prompt history, AI-use
+disclosure, review notes, and limitations. The repository currently has no
+configured Git remote; publish it to a public GitHub repository from an
+authorized account before treating that submission requirement as complete.
