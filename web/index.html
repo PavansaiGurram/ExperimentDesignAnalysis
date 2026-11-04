@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>Experiment Lab</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Experiment Lab home">
+        <span class="brand-mark">E</span>
+        <span>Experiment<span class="brand-light">Lab</span></span>
+      </a>
+      <div class="topbar-meta"><span class="live-dot"></span> Local workspace <span id="scale-label" class="scale-pill">Loading</span></div>
+    </header>
+
+    <main class="page">
+      <section class="intro">
+        <div>
+          <p class="eyebrow">EXPERIMENTS / OVERVIEW</p>
+          <h1>Make better calls with better evidence.</h1>
+          <p class="intro-copy">A clear view of your experiment outcomes, uncertainty, and guardrails.</p>
+        </div>
+        <div class="data-note"><span class="note-icon">i</span><span>Demonstration data<br><strong>Synthetic · Reproducible</strong></span></div>
+      </section>
+
+      <section class="stats" aria-label="Dataset summary">
+        <article class="stat-card"><span class="stat-label">Experiments</span><strong id="stat-experiments">—</strong><span class="stat-foot">in this dataset</span></article>
+        <article class="stat-card"><span class="stat-label">Audience members</span><strong id="stat-audience">—</strong><span class="stat-foot">eligible participants</span></article>
+        <article class="stat-card"><span class="stat-label">Results blocked</span><strong id="stat-blocked">—</strong><span class="stat-foot">sample-ratio mismatch</span></article>
+        <article class="stat-card"><span class="stat-label">Data checks</span><strong id="stat-checks">—</strong><span class="stat-foot">validation checks passed</span></article>
+      </section>
+
+      <section class="content-card">
+        <div class="section-heading">
+          <div><h2>Experiment results</h2><p>Choose an experiment to inspect its primary metric and guardrail.</p></div>
+          <label class="search-wrap"><span class="sr-only">Search experiments</span><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search experiments"></label>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Experiment</th><th>Primary metric</th><th>Effect</th><th>95% confidence interval</th><th>Result</th><th>Guardrail</th></tr></thead>
+            <tbody id="experiments-body"><tr><td colspan="6" class="loading">Loading experiment data…</td></tr></tbody>
+          </table>
+        </div>
+        <p id="error-message" class="error-message" role="alert" hidden></p>
+      </section>
+
+      <section id="detail" class="detail-card" aria-live="polite">
+        <div class="detail-empty"><span class="detail-icon">↗</span><div><h2>Select an experiment</h2><p>Its hypothesis, sample sizes, conversion rates, and uncertainty will appear here.</p></div></div>
+      </section>
+
+      <footer><span>Experiment Lab</span><span>Local-only dashboard · No external services</span></footer>
+    </main>
+  </body>
+</html>
