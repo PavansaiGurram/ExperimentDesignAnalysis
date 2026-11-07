@@ -11,7 +11,9 @@
             "program": "${workspaceFolder}\\app.py",
             "args": [
                 "--scale",
-                "starter"
+                "starter",
+                "--port",
+                "8081"
             ],
             "console": "integratedTerminal",
             "serverReadyAction": {

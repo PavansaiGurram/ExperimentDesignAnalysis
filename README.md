@@ -18,7 +18,7 @@ From the project folder in PowerShell:
 python app.py
 ```
 
-Open [http://127.0.0.1:8080](http://127.0.0.1:8080). The app creates the
+Open [http://127.0.0.1:8081](http://127.0.0.1:8081). The app creates the
 starter dataset on first run if it is missing, then serves a local dashboard
 with primary results, confidence intervals, sample sizes, and guardrail
 statuses. It uses synthetic data and binds to `127.0.0.1` by default. Stop it
@@ -30,7 +30,7 @@ Use the larger generated dataset with:
 python app.py --scale full
 ```
 
-Choose another port with `python app.py --port 8081`. In VS Code, press F5 and
+Choose another port with `python app.py --port 8082`. In VS Code, press F5 and
 choose **Run experiment dashboard** to start the server and open the page.
 
 ## Generate data and run tests
@@ -98,8 +98,8 @@ this project folder:
 python -m unittest discover -s tests -v
 ```
 
-Verify the running app endpoints with `http://127.0.0.1:8080/health` and
-`http://127.0.0.1:8080/api/dashboard`. The test suite also checks data loading,
+Verify the running app endpoints with `http://127.0.0.1:8081/health` and
+`http://127.0.0.1:8081/api/dashboard`. The test suite also checks data loading,
 first-run generation, HTTP routes, and the existing generator's integrity and
 reproducibility behavior.
 
